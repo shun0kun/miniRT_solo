@@ -16,6 +16,7 @@ typedef struct s_light
 {
 	t_vec3	pos;
 	double	brightness;
+	t_color	color;
 }	t_light;
 
 typedef struct s_ambient
@@ -29,7 +30,10 @@ typedef struct s_scene
 	t_camera	camera;
 	t_light		light;
 	t_ambient	ambient;
-	t_object	*objects;
+	t_object*	objects;
 }	t_scene;
+
+void	scene_clear(t_scene *scene);
+bool	scene_add_object(t_scene *scene, t_object *object);
 
 #endif

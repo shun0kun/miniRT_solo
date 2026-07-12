@@ -8,27 +8,27 @@
 bool	parse_line(const char *line, t_scene *scene, t_parse_state *st)
 {
 	char	**tokens;
-	bool	ok;
+	bool	ret;
 
 	tokens = ft_split(line, " \t\n\v\f\r");
 	if (!tokens)
 		return (false);
 	if (ft_strcmp(tokens, "A") == 0)
-		ok = parse_ambient(tokens, scene, st);
+		ret = parse_ambient(tokens, scene, st);
 	else if (ft_strcmp(tokens, "C") == 0)
-		ok = parse_camera(tokens, scene, st);
+		ret = parse_camera(tokens, scene, st);
 	else if (ft_strcmp(tokens, "L") == 0)
-		ok = parse_light(tokens, scene, st);
+		ret = parse_light(tokens, scene, st);
 	else if (ft_strcmp(tokens, "sp") == 0)
-		ok = parse_sphere(tokens, scene);
+		ret = parse_sphere(tokens, scene);
 	else if (ft_strcmp(tokens, "pl") == 0)
-		ok = parse_plane(tokens, scene);
+		ret = parse_plane(tokens, scene);
 	else if (ft_strcmp(tokens, "cy") == 0)
-		ok = parse_cylinder(tokens, scene);
+		ret = parse_cylinder(tokens, scene);
 	else
-		ok = false;
+		ret = false;
 	free_strs(tokens);
-	return (ok);
+	return (ret);
 }
 
 bool	parse_file(const char *path, t_scene *scene)

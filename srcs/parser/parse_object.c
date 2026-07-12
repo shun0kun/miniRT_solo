@@ -48,7 +48,7 @@ bool	parse_cylinder(const char **tokens, t_scene *scene)
 		return (false);
 	if (!tokens[1] || !parse_vec3(tokens[1], &obj->data.cylinder.center))
 		return (false);
-	if (!tokens[2] || !parse_normal_vec3(tokens[2], &obj->data.cylinder.axis))
+	if (!tokens[2] || !parse_unit_vec3(tokens[2], &obj->data.cylinder.axis))
 		return (false);
 	if (!tokens[3] || !parse_positive_double(tokens[3], &obj->data.cylinder.radius))
 		return (false);

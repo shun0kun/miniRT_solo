@@ -19,7 +19,7 @@ bool	parse_camera(const char *tokens, t_scene *scene, t_parse_state *st)
 		return (false);
 	if (!tokens[1] || !parse_vec3(tokens[1], &scene->camera.pos))
 		return (false);
-	if (!tokens[2] || !parse_normal_vec3(tokens[2], &scene->camera.dir))
+	if (!tokens[2] || !parse_unit_vec3(tokens[2], &scene->camera.dir))
 		return (false);
 	if (!tokens[3] || !parse_fov(tokens[3], &scene->camera.dir))
 		return (false);

@@ -4,6 +4,6 @@
 # include <stdbool.h>
 # include "scene.h"
 
-bool	parse_file(const char *path, t_scene *scene);
+bool	parse_file(const char *path, t_scene *scene); // 関数名改善の余地あるかも
 
 #endif

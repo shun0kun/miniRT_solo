@@ -13,17 +13,19 @@ bool	parse_line(const char *line, t_scene *scene, t_parse_state *st)
 	tokens = ft_split(line, " \t\n\v\f\r");
 	if (!tokens)
 		return (false);
-	if (ft_strcmp(tokens, "A") == 0)
+	if (!tokens[0]) // ft_splitが空行をかえしてくれる前提。ft_splitの仕様を要確認
+		ret = true;
+	else if (ft_strcmp(tokens[0], "A") == 0)
 		ret = parse_ambient(tokens, scene, st);
-	else if (ft_strcmp(tokens, "C") == 0)
+	else if (ft_strcmp(tokens[0], "C") == 0)
 		ret = parse_camera(tokens, scene, st);
-	else if (ft_strcmp(tokens, "L") == 0)
+	else if (ft_strcmp(tokens[0], "L") == 0)
 		ret = parse_light(tokens, scene, st);
-	else if (ft_strcmp(tokens, "sp") == 0)
+	else if (ft_strcmp(tokens[0], "sp") == 0)
 		ret = parse_sphere(tokens, scene);
-	else if (ft_strcmp(tokens, "pl") == 0)
+	else if (ft_strcmp(tokens[0], "pl") == 0)
 		ret = parse_plane(tokens, scene);
-	else if (ft_strcmp(tokens, "cy") == 0)
+	else if (ft_strcmp(tokens[0], "cy") == 0)
 		ret = parse_cylinder(tokens, scene);
 	else
 		ret = false;
@@ -49,8 +51,8 @@ bool	parse_file(const char *path, t_scene *scene)
 		if (!parse_line(line, scene, &st))
 		{
 			free(line);
-			scene_clear(scene);
 			close(fd);
+			scene_clear(scene);
 			return (false);
 		}
 		free(line);

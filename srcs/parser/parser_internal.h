@@ -22,5 +22,13 @@ bool	parse_plane(const char **tokens, t_scene *scene);
 bool	parse_cylinder(const char **tokens, t_scene *scene);
 
 /* parse_values.c */
+bool	parse_color(const char *str, t_color *color);
+bool	parse_vec3(const char *str, t_vec3 *v);
+bool	parse_unit_vec3(const char *str, t_vec3 *v);
+bool	parse_int(const char *str, int *x);
+bool	parse_double(const char *str, double *x);
+bool	parse_positive_double(const char *str, double *x);
+bool	parse_ratio(const char *str, double *ratio);
+bool	parse_fov(const char *str, double *fov);
 
 #endif

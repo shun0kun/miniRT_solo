@@ -75,6 +75,6 @@ typedef struct s_scene
 }	t_scene;
 
 void	scene_clear(t_scene *scene);
-bool	scene_add_object(t_scene *scene, t_object *object);
+void	scene_add_object(t_scene *scene, t_object *object);
 
 #endif

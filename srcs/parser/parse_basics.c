@@ -40,5 +40,5 @@ bool	parse_light(const char *tokens, t_scene *scene, t_parse_state *st)
 		return (false);
 	if (!tokens[4])
 		return (false);
-	return (true);	
+	return (true);
 }

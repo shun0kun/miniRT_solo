@@ -5,5 +5,5 @@
 - 入力のオーバーフロー判定までやるのか。
 - sceneとparserを合体させる。同じモジュールにする。
 - EPSILON作る。parserのunit vec3の比較条件文とかでも。
-
+- hookに渡すポインタは、t_mlx_hook_argみたいな感じにする。渡したいもの(sceneとかimageとか)をポインタとして入れる感じ。
  

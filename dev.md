@@ -7,3 +7,5 @@
 - EPSILON作る。parserのunit vec3の比較条件文とかでも。
 - hookに渡すポインタは、t_mlx_hook_argみたいな感じにする。渡したいもの(sceneとかimageとか)をポインタとして入れる感じ。
 - parserのif文羅列方式は、テーブル駆動方式に変えるのもあり。コードがかなり短くなる。norminette対策にもなる。
+- scene_clearはscene_loadの外で呼ぶ案もある。
+- fov 180は受け付けるが、実際には描写できない。その場合のfov値の内部設定をどうするかを考えておく。現時点では179に変換してるだけ。

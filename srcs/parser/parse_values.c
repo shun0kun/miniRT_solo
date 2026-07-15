@@ -83,12 +83,15 @@ bool	parse_ratio(const char *str, double *ratio)
 }
 
 // こんな感じにすれば上の代入問題は解決されるが、行は長くなるし、もしかしたら余計である可能性もある。
+// fov 180に対する処理は改善の余地あり。
 bool	parse_fov(const char *str, double *fov)
 {
 	int	fov_int;
 
 	if (!parse_int(str, &fov_int) || fov_int < 0 || fov_int > 180)
-		return (false);	
+		return (false);
+	if (fov_int == 180.0)
+		fov_int = 179.0;
 	*fov = (double)fov_int;
 	return (true);
 }

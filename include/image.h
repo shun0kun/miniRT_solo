@@ -1,6 +1,8 @@
 #ifndef IMAGE_H
 # define IMAGE_H
 
+# include "color.h"
+
 typedef struct s_image
 {
 	void	*ptr;
@@ -14,5 +16,6 @@ typedef struct s_image
 
 void	image_init(t_image *image, void *mlx);
 void	image_destroy();
+void	image_put_pixel(int x, int y, t_color color);
 
 #endif

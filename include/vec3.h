@@ -1,6 +1,8 @@
 #ifndef VEC3_H
 # define VEC3_H
 
+# include <stdbool.h>
+
 typedef struct s_vec3
 {
 	double	x;
@@ -23,5 +25,9 @@ t_vec3	vec3_cross(t_vec3 a, t_vec3 b);
 double	vec3_len(t_vec3 v);
 double	vec3_len2(t_vec3 v);
 t_vec3	vec3_normalize(t_vec3 v);
+
+/* vec3_predicate.c*/
+bool	vec3_is_zero(t_vec3 v);
+bool	vec3_is_parallel(t_vec3 a, t_vec3 b);
 
 #endif

@@ -9,11 +9,18 @@ bool	object_hit(const t_ray ray, const t_object *object, t_hit *hit)
 bool	find_nearest_hit(const t_ray ray, const t_object *objects, t_hit *hit)
 {
 	t_object	*obj;
+	t_hit		nearest;
+	t_hit		tmp;
 
+	obj = objects;
+	object_hit(ray, obj, &nearest);
 	while (obj)
 	{
+		if (object_hit(ray, obj, &tmp) && nearest.t > tmp.t)
+			nearest = tmp;
 		obj = obj->next;
 	}
+	*hit = nearest;
 	return (true);
 }
 

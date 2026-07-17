@@ -1,33 +1,33 @@
 #include "render.h"
 
-bool	object_hit(const t_ray ray, const t_object *object, t_hit *hit)
+bool	find_nearest_hit(t_ray const ray, t_object const *objects, t_hit *hit)
 {
-	
-	return (true);
-}
+	t_object const	*obj;
+	t_hit			nearest;
+	t_hit			tmp;
+	bool			has_hit;
 
-bool	find_nearest_hit(const t_ray ray, const t_object *objects, t_hit *hit)
-{
-	t_object	*obj;
-	t_hit		nearest;
-	t_hit		tmp;
-
+	has_hit = false;
 	obj = objects;
-	object_hit(ray, obj, &nearest);
 	while (obj)
 	{
-		if (object_hit(ray, obj, &tmp) && nearest.t > tmp.t)
+		if (object_hit(ray, obj, &tmp) && (!has_hit || nearest.t > tmp.t))
+		{
 			nearest = tmp;
+			has_hit = true;
+		}
 		obj = obj->next;
 	}
-	*hit = nearest;
-	return (true);
+	if (has_hit)
+		*hit = nearest;
+	return (has_hit);
 }
 
 t_vec3	hit_normal(const t_hit *hit)
 {
 	t_vec3	normal;
 
+	normal = vec3_new(0.0, 0.0, 0.0);
 	return (normal);
 }
 
@@ -35,6 +35,7 @@ t_color	shade_hit(const t_scene *scene, const t_hit *hit, t_vec3 normal)
 {
 	t_color	color;
 
+	color = color_new(100, 50, 200);
 	return (color);
 }
 

@@ -1,4 +1,4 @@
-#include "parser_internal.h"
+#include "scene_internal.h"
 
 bool	parse_ambient(const char **tokens, t_scene *scene, t_parse_state *st)
 {

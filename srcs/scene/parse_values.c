@@ -1,17 +1,7 @@
-#include "parser_internal.h"
+#include "scene_internal.h"
 #include "libft.h"
-
-// オーバーフロー処理する。
-bool	parse_double(const char *str, double *x)
-{
-
-}
-
-// オーバーフロー処理する。
-bool	parse_int(const char *str, int *x)
-{
-	
-}
+#include "constants.h"
+#include <math.h>
 
 bool	parse_vec3(const char *str, t_vec3 *v)
 {
@@ -34,7 +24,7 @@ bool	parse_vec3(const char *str, t_vec3 *v)
 // 失敗時もvの中身は代入されるけど、設計としてどうなのか考える。
 bool	parse_unit_vec3(const char *str, t_vec3 *v)
 {
-	if (!parse_vec3(str, v) || vec3_len(*v) != 1.0) // 精度心配。本当は厳密に1なのにdouble計算によて1ではなくなる恐れがある。EPSの出番
+	if (!parse_vec3(str, v) || fabs((vec3_len(*v) - 1.0)) > EPSILON)
 		return (false);
 	return (true);
 }
@@ -54,13 +44,6 @@ bool	parse_color(const char *str, t_color *color)
 	}
 	free_str_arr(strs);
 	if (color->r < 0 || color->r > 255 || color->g < 0 || color->g > 255 || color->b < 0 || color->b > 255)
-		return (false);
-	return (true);
-}
-
-bool	parse_positive_double(const char *str, double *x)
-{
-	if (!parse_double(str, x) || *x <= 0.0)
 		return (false);
 	return (true);
 }

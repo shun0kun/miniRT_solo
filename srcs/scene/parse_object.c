@@ -1,4 +1,4 @@
-#include "parser_internal.h"
+#include "scene_internal.h"
 #include <stdlib.h>
 
 bool	parse_sphere(const char **tokens, t_scene *scene)
@@ -23,6 +23,7 @@ bool	parse_sphere(const char **tokens, t_scene *scene)
 		free(obj);
 		return (ret);
 	}
+	obj->type = OBJ_SPHERE;
 	scene_add_object(scene, obj);
 	return (ret);
 }
@@ -49,6 +50,7 @@ bool	parse_plane(const char **tokens, t_scene *scene)
 		free(obj);
 		return (ret);
 	}
+	obj->type = OBJ_PLANE;
 	scene_add_object(scene, obj);
 	return (ret);
 }
@@ -79,6 +81,7 @@ bool	parse_cylinder(const char **tokens, t_scene *scene)
 		free(obj);
 		return (ret);
 	}
+	obj->type = OBJ_CYLINDER;
 	scene_add_object(scene, obj);
 	return (ret);
 }

@@ -1,6 +1,5 @@
-#include "parser.h"
-#include "parser_internal.h"
 #include "scene.h"
+#include "scene_internal.h"
 #include <fcntl.h>
 #include <stdlib.h>
 // #include "libft.h"
@@ -33,7 +32,7 @@ bool	parse_line(const char *line, t_scene *scene, t_parse_state *st)
 	return (ret);
 }
 
-bool	parse_file(const char *path, t_scene *scene)
+bool	parse_file(char const *path, t_scene *scene)
 {
 	int				fd;
 	char			*line;

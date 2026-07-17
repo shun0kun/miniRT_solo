@@ -75,10 +75,7 @@ typedef struct s_scene
 }	t_scene;
 
 // 外部API
-bool	scene_load(const char *filepath, t_scene *scene);
+bool	scene_load(char const *filepath, t_scene *scene);
 void	scene_clear(t_scene *scene);
-
-// 内部API。内部headerにいれておく。
-void	scene_add_object(t_scene *scene, t_object *object);
 
 #endif

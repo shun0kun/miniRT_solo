@@ -17,7 +17,7 @@ void	render(const t_scene *scene, t_image *image)
 		{
 			ray = camera_ray(&scene->camera, image, x, y);
 			color = trace_ray(scene, ray);
-			image_put_pixel(x, y, color);
+			image_put_pixel(image, x, y, color);
 			x++;
 		}
 		y++;

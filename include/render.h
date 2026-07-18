@@ -21,11 +21,11 @@ void	render(const t_scene *scene, t_image *image);
 t_ray	camera_ray(const t_camera *camera, const t_image *image, int x, int y);
 
 t_color	trace_ray(const t_scene *scene, const t_ray ray);
-bool	find_nearest_hit(t_ray const ray, t_object const *objects, t_hit *hit);
+bool	find_nearest_hit(t_ray const ray, t_object *objects, t_hit *hit);
 
-bool	object_hit(t_ray const ray, t_object const *object, t_hit *hit);
-bool	sphere_hit(t_ray const ray, t_object const *object, t_hit *hit);
-bool	plane_hit(t_ray const ray, t_object const *object, t_hit *hit);
-bool	cylinder_hit(t_ray const ray, t_object const *object, t_hit *hit);
+bool	object_hit(t_ray const ray, t_object *object, t_hit *hit);
+bool	sphere_hit(t_ray const ray, t_object *object, t_hit *hit);
+bool	plane_hit(t_ray const ray, t_object *object, t_hit *hit);
+bool	cylinder_hit(t_ray const ray, t_object *object, t_hit *hit);
 
 #endif

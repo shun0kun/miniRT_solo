@@ -27,7 +27,7 @@ bool	select_nearest_valid_root(double const *roots, int root_count, double *sele
 }
 
 // 負のrootの処理。最小のtが必要。あと、EPSILONも扱う。
-bool	sphere_hit(t_ray const ray, t_object const *object, t_hit *hit)
+bool	sphere_hit(t_ray const ray, t_object *object, t_hit *hit)
 {
 	t_sphere const	*sphere;
 	int				root_count;
@@ -40,25 +40,31 @@ bool	sphere_hit(t_ray const ray, t_object const *object, t_hit *hit)
 		vec3_len2(vec3_sub(ray.origin, sphere->center)) - sphere->radius * sphere->radius,
 		roots
 	);
-	if (select_nearest_valid_root(roots, root_count, &hit->t))
+	if (!select_nearest_valid_root(roots, root_count, &hit->t))
 		return (false);
 	hit->ray = ray;
 	hit->object = object;
-	hit->point = ray_at(ray, roots[0]);
+	hit->point = ray_at(ray, hit->t);
 	return (true);
 }
 
-bool	plane_hit(t_ray const ray, t_object const *object, t_hit *hit)
+bool	plane_hit(t_ray const ray, t_object *object, t_hit *hit)
 {
+	(void)ray;
+	(void)object;
+	(void)hit;
 	return (false);
 }
 
-bool	cylinder_hit(t_ray const ray, t_object const *object, t_hit *hit)
+bool	cylinder_hit(t_ray const ray, t_object *object, t_hit *hit)
 {
+	(void)ray;
+	(void)object;
+	(void)hit;
 	return (false);
 }
 
-bool	object_hit(t_ray const ray, t_object const *object, t_hit *hit)
+bool	object_hit(t_ray const ray, t_object *object, t_hit *hit)
 {
 	if (!object)
 		return (false);

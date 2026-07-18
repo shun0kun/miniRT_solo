@@ -1,0 +1,6 @@
+#include "ray.h"
+
+t_vec3	ray_at(t_ray ray, double t)
+{
+	return (vec3_add(ray.origin, vec3_scale(ray.dir, t)));
+}

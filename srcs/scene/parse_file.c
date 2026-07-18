@@ -2,14 +2,15 @@
 #include "scene_internal.h"
 #include <fcntl.h>
 #include <stdlib.h>
-// #include "libft.h"
+#include "libft.h"
 
 bool	parse_line(const char *line, t_scene *scene, t_parse_state *st)
 {
 	char	**tokens;
 	bool	ret;
 
-	tokens = ft_split(line, " \t\n\v\f\r");
+	// tokens = ft_split(line, " \t\n\v\f\r");
+	tokens = ft_split(line, ' ');
 	if (!tokens)
 		return (false);
 	if (!tokens[0]) // ft_splitが空行をかえしてくれる前提。ft_splitの仕様を要確認
@@ -28,7 +29,7 @@ bool	parse_line(const char *line, t_scene *scene, t_parse_state *st)
 		ret = parse_cylinder(tokens, scene);
 	else
 		ret = false;
-	free_strs(tokens);
+	ft_strs_free(tokens);
 	return (ret);
 }
 

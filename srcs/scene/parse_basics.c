@@ -1,6 +1,6 @@
 #include "scene_internal.h"
 
-bool	parse_ambient(const char **tokens, t_scene *scene, t_parse_state *st)
+bool	parse_ambient(char **tokens, t_scene *scene, t_parse_state *st)
 {
 	if (st->n_ambient++ > 0)
 		return (false);
@@ -13,7 +13,7 @@ bool	parse_ambient(const char **tokens, t_scene *scene, t_parse_state *st)
 	return (true);
 }
 
-bool	parse_camera(const char **tokens, t_scene *scene, t_parse_state *st)
+bool	parse_camera(char **tokens, t_scene *scene, t_parse_state *st)
 {
 	if (st->n_camera++ > 0)
 		return (false);
@@ -28,7 +28,7 @@ bool	parse_camera(const char **tokens, t_scene *scene, t_parse_state *st)
 	return (true);	
 }
 
-bool	parse_light(const char **tokens, t_scene *scene, t_parse_state *st)
+bool	parse_light(char **tokens, t_scene *scene, t_parse_state *st)
 {
 	if (st->n_light++ > 0)
 		return (false);

@@ -1,7 +1,7 @@
 #include "scene_internal.h"
 #include <stdlib.h>
 
-bool	parse_sphere(const char **tokens, t_scene *scene)
+bool	parse_sphere(char **tokens, t_scene *scene)
 {
 	t_object	*obj;
 	bool		ret;
@@ -28,7 +28,7 @@ bool	parse_sphere(const char **tokens, t_scene *scene)
 	return (ret);
 }
 
-bool	parse_plane(const char **tokens, t_scene *scene)
+bool	parse_plane(char **tokens, t_scene *scene)
 {
 	t_object	*obj;
 	bool		ret;
@@ -55,7 +55,7 @@ bool	parse_plane(const char **tokens, t_scene *scene)
 	return (ret);
 }
 
-bool	parse_cylinder(const char **tokens, t_scene *scene)
+bool	parse_cylinder(char **tokens, t_scene *scene)
 {
 	t_object	*obj;
 	bool		ret;

@@ -4,7 +4,7 @@
 
 bool	minirt_init(t_minirt *rt, const char *filepath)
 {
-	if (!scene_load(&rt->scene, filepath))
+	if (!scene_load(filepath, &rt->scene))
 		return (false);
 	rt->mlx = mlx_init();
 	rt->window = mlx_new_window(rt->mlx, 1920, 1080, "miniRT");
@@ -19,7 +19,7 @@ bool	minirt_init(t_minirt *rt, const char *filepath)
 // NULLチェックのどもやる。
 void	minirt_destroy(t_minirt *rt)
 {
-	scene_clear(&rt->image);
+	scene_clear(&rt->scene);
 	mlx_destroy_image(rt->window, rt->image.ptr);
 	mlx_destroy_window(rt->mlx, rt->window);
 	// mlx_destroy_display(app->mlx);

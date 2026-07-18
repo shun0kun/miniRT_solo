@@ -18,14 +18,14 @@ void	scene_add_object(t_scene *scene, t_object *object);
 bool	parse_file(char const *filepath, t_scene *scene);
 
 /* parse_basics.c */
-bool	parse_ambient(const char **tokens, t_scene *scene, t_parse_state *st);
-bool	parse_camera(const char **tokens, t_scene *scene, t_parse_state *st);
-bool	parse_light(const char **tokens, t_scene *scene, t_parse_state *st);
+bool	parse_ambient(char **tokens, t_scene *scene, t_parse_state *st);
+bool	parse_camera(char **tokens, t_scene *scene, t_parse_state *st);
+bool	parse_light(char **tokens, t_scene *scene, t_parse_state *st);
 
 /* parse_shapes.c */
-bool	parse_sphere(const char **tokens, t_scene *scene);
-bool	parse_plane(const char **tokens, t_scene *scene);
-bool	parse_cylinder(const char **tokens, t_scene *scene);
+bool	parse_sphere(char **tokens, t_scene *scene);
+bool	parse_plane(char **tokens, t_scene *scene);
+bool	parse_cylinder(char **tokens, t_scene *scene);
 
 /* parse_values.c */
 bool	parse_color(const char *str, t_color *color);

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimots <sshimots@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: shimotsukasashunsuke <shimotsukasashuns    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 11:05:32 by sshimots          #+#    #+#             */
-/*   Updated: 2025/05/25 10:45:50 by sshimots         ###   ########.fr       */
+/*   Updated: 2026/07/18 17:46:16 by shimotsukas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../libft.h"
+#include "gnl_internal.h"
 
 char	*if_has_nl_get_line(char **p_stash)
 {

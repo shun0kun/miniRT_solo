@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimots <sshimots@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: shimotsukasashunsuke <shimotsukasashuns    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 17:42:08 by sshimots          #+#    #+#             */
-/*   Updated: 2025/05/07 22:00:25 by sshimots         ###   ########.fr       */
+/*   Updated: 2026/07/18 17:41:49 by shimotsukas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,10 @@ void	ft_free(char **res, size_t i)
 char	**make_result_1(size_t *start, size_t *end)
 {
 	size_t	i;
-	size_t	j;
 	size_t	count;
 	char	**res;
 
 	i = 0;
-	j = 0;
 	count = 0;
 	while (start[count] != (size_t)-1)
 		count++;

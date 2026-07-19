@@ -9,7 +9,7 @@ bool	parse_vec3(const char *str, t_vec3 *v)
 
 	if (!str)
 		return (false);
-	strs = ft_split(str, ','); // 区切り文字たくさん指定できる方の。
+	strs = ft_split(str, ',');
 	if (!strs)
 		return (NULL);
 	if (ft_strs_len(strs) != 3 || !parse_double(strs[0], &v->x) || !parse_double(strs[1], &v->y) || !parse_double(strs[2], &v->z))

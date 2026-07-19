@@ -19,13 +19,15 @@ OBJS = $(addprefix $(OBJS_DIR), $(OBJS_FILES))
 LIBFT_DIR = libft/
 LIBFT =$(LIBFT_DIR)libft.a
 
-MLX_DIR = minilibx_macos/
+# MLX_DIR = minilibx_macos/
+MLX_DIR = minilibx_linux/
 MLX = $(MLX_DIR)libmlx.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 INCLUDES = -Iinclude -I$(LIBFT_DIR) -I$(MLX_DIR)
-LIBS = $(LIBFT) $(MLX) -framework OpenGL -framework AppKit
+# LIBS = $(LIBFT) $(MLX) -framework OpenGL -framework AppKit
+LIBS = $(LIBFT) $(MLX) -lXext -lX11 -lm
 
 all: $(NAME)
 

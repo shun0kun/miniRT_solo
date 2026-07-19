@@ -9,11 +9,10 @@ bool	parse_line(const char *line, t_scene *scene, t_parse_state *st)
 	char	**tokens;
 	bool	ret;
 
-	// tokens = ft_split(line, " \t\n\v\f\r");
-	tokens = ft_split(line, ' ');
+	tokens = ft_split_piscine(line, " \t\n\v\f\r");
 	if (!tokens)
 		return (false);
-	if (!tokens[0]) // ft_splitが空行をかえしてくれる前提。ft_splitの仕様を要確認
+	if (!tokens[0])
 		ret = true;
 	else if (ft_strcmp(tokens[0], "A") == 0)
 		ret = parse_ambient(tokens, scene, st);

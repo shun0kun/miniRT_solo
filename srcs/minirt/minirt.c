@@ -4,6 +4,7 @@
 
 bool	minirt_init(t_minirt *rt, const char *filepath)
 {
+	*rt = (t_minirt){0};
 	if (!scene_load(filepath, &rt->scene))
 		return (false);
 	rt->mlx = mlx_init();

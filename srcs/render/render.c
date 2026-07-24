@@ -1,4 +1,5 @@
 #include "render.h"
+#include "render_internal.h"
 #include "color.h"
 #include "ray.h"
 

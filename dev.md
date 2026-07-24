@@ -1,5 +1,13 @@
 # miniRT development
 
+## TODO
+- 法線ベクトル算出（sphere, plane, cylinder）
+- hit算出（plane, cylinder）
+- 色算出
+- minilibxの後処理
+- パーサー
+- .rt以外のファイルを弾く
+
 ## MEMO
 - 現状のget_next_lineはmalloc失敗を検知することができない。read失敗も。→ exitするのも1つの案。
 - 入力のオーバーフロー判定までやるのか。

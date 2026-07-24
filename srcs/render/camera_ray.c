@@ -1,5 +1,5 @@
 #include <math.h>
-#include "render.h"
+#include "render_internal.h"
 #include "ray.h"
 #include "algebra.h"
 

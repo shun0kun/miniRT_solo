@@ -1,4 +1,4 @@
-#include "render.h"
+#include "render_internal.h"
 #include "algebra.h"
 
 bool	select_nearest_valid_root(double const *roots, int root_count, double *selected_root)
